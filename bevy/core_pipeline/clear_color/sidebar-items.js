@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["ClearColorConfig",""]],"struct":[["ClearColor","When used as a resource, sets the color that is used to clear the screen between frames."]]});

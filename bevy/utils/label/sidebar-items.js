@@ -1,0 +1,1 @@
+initSidebarItems({"macro":[["concat_idents","This macros makes it possible to concatenate identifiers at compile time and use them as normal. It’s an extension/replacement of `std::concat_idents`, since in comprassion to the std-solution, the idents here can be used everywhere."],["define_label","Macro to define a new label trait"]],"trait":[["DynEq",""],["DynHash",""]]});

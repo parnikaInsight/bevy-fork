@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["UpdateMode","Configure how the winit event loop should update."]],"fn":[["get_best_videomode",""],["get_fitting_videomode",""],["winit_runner",""],["winit_runner_with",""]],"struct":[["WinitPlugin",""],["WinitSettings","A resource for configuring usage of the `rust_winit` library."],["WinitWindows",""]]});

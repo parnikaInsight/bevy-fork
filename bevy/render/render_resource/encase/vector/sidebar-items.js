@@ -1,0 +1,1 @@
+initSidebarItems({"macro":[["impl_vector","Used to implement `ShaderType` for the given vector type"]],"trait":[["AsMutVectorParts","Enables writing to the vector (via `&mut [T; N]`)"],["AsRefVectorParts","Enables reading from the vector (via `&[T; N]`)"],["FromVectorParts","Enables the cration of a vector (via `[T; N]`)"],["VectorScalar",""]]});

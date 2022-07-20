@@ -1,0 +1,1 @@
+initSidebarItems({"macro":[["impl_rts_array","Used to implement `ShaderType` for the given runtime-sized array type"]],"trait":[["Length",""],["Truncate",""]]});
