@@ -1,6 +1,7 @@
 //! Plays animations from a skinned glTF.
 
 use bevy::prelude::*;
+use bevy::utils::Duration;
 
 fn main() {
     App::new()
@@ -69,7 +70,8 @@ fn setup(
     println!("  - spacebar: play / pause");
     println!("  - arrow up / down: speed up / slow down animation playback");
     println!("  - arrow left / right: seek backward / forward");
-    println!("  - return: change animation");
+    println!("  - return: change animation using crossfade()");
+    println!("  - p: change animation using play()");
 }
 
 // Once the scene is loaded, start the animation
@@ -113,16 +115,28 @@ fn keyboard_animation_control(
 
         if keyboard_input.just_pressed(KeyCode::Left) {
             let elapsed = player.elapsed();
-            player.set_elapsed(elapsed - 0.1);
+            player.set_elapsed(elapsed - Duration::from_secs_f32(0.1));
         }
 
         if keyboard_input.just_pressed(KeyCode::Right) {
             let elapsed = player.elapsed();
-            player.set_elapsed(elapsed + 0.1);
+            player.set_elapsed(elapsed + Duration::from_secs_f32(0.1));
         }
 
         if keyboard_input.just_pressed(KeyCode::Return) {
             *current_animation = (*current_animation + 1) % animations.0.len();
+
+            player
+                .cross_fade(
+                    animations.0[*current_animation].clone_weak(),
+                    Duration::from_secs_f32(1.5),
+                )
+                .repeat();
+        }
+
+        if keyboard_input.just_pressed(KeyCode::P) {
+            *current_animation = (*current_animation + 1) % animations.0.len();
+
             player
                 .play(animations.0[*current_animation].clone_weak())
                 .repeat();
