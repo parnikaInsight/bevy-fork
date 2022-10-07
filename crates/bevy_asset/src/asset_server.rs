@@ -395,6 +395,7 @@ impl AssetServer {
             .get_mut(&asset_path_id.source_path_id())
             .expect("`AssetSource` should exist at this point.");
         if version != source_info.version {
+            println!("Changed asset");
             return Ok(asset_path_id);
         }
 
